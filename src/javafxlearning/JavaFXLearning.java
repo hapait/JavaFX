@@ -40,11 +40,18 @@ public class JavaFXLearning extends Application {
             AlertBox.display("Alert", "You need to close this modal");
         });
         
+        Button openConfirmBoxButton = new Button("openConfirmBoxButton");
+        openConfirmBoxButton.setOnAction(e->{
+            boolean b = ConfirmBox.display("Confirmation", "Do you Agreee?");
+            System.out.println("User answer is: "+ b);
+        });
+        
         //StackPane root = new StackPane();
         VBox root = new VBox();
         root.getChildren().add(goButton);
         root.getChildren().add(btn2);
         root.getChildren().add(openDialogBoxButton);
+        root.getChildren().add(openConfirmBoxButton);
         
         scene = new Scene(root, 300, 250);
         
