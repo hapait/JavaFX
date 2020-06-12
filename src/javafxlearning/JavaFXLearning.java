@@ -56,6 +56,16 @@ public class JavaFXLearning extends Application {
             MultiLayoutWindow.display("abdfbs", "hsdfjshjfh");
         });
         
+        Button gotoGridLayoutPage = new Button("gotoGridLayoutPage");
+        gotoGridLayoutPage.setOnAction(e->{
+            GridLayoutTest.Display();
+        });
+        
+        Button gotoValidation = new Button("gotoValidation");
+        gotoValidation.setOnAction(e->{
+            ValidationTest.Display();
+        });
+        
         //StackPane root = new StackPane();
         VBox root = new VBox();
         root.getChildren().add(goButton);
@@ -64,8 +74,10 @@ public class JavaFXLearning extends Application {
         root.getChildren().add(openConfirmBoxButton);
         root.getChildren().add(closeActionButton);
         root.getChildren().add(gotoMultiLayout);
+        root.getChildren().add(gotoGridLayoutPage);
+        root.getChildren().add(gotoValidation);
         
-        scene = new Scene(root, 300, 250);
+        scene = new Scene(root, 300, 600);
         
         
         //Scene 2
