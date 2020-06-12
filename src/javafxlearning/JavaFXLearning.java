@@ -12,22 +12,21 @@ import javafx.stage.Stage;
  *
  * @author Shaft
  */
-public class JavaFXLearning extends Application {
+public class JavaFXLearning extends Application implements EventHandler<ActionEvent>{
+    Button btn = new Button();
+    Button btn2 = new Button("abcd");
     
     @Override
     public void start(Stage primaryStage) {
-        Button btn = new Button();
+        
         btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
+        
+        btn2.setOnAction(this);
+        btn.setOnAction(this);
         
         StackPane root = new StackPane();
         root.getChildren().add(btn);
+        root.getChildren().add(btn2);
         
         Scene scene = new Scene(root, 300, 250);
         
@@ -41,6 +40,15 @@ public class JavaFXLearning extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+    }
+
+    @Override
+    public void handle(ActionEvent event) {
+        if(event.getSource() == btn){
+            System.out.println("btn is pressed");
+        }else if(event.getSource() == btn2){
+            System.out.println("btn2 is pressed");
+        }
     }
     
 }
