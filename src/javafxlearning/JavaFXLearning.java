@@ -46,12 +46,18 @@ public class JavaFXLearning extends Application {
             System.out.println("User answer is: "+ b);
         });
         
+        Button closeActionButton = new Button("closeActionButton");
+        closeActionButton.setOnAction(e->{
+            new ClosingAction().display("abcd", "abdcjdfs");
+        });
+        
         //StackPane root = new StackPane();
         VBox root = new VBox();
         root.getChildren().add(goButton);
         root.getChildren().add(btn2);
         root.getChildren().add(openDialogBoxButton);
         root.getChildren().add(openConfirmBoxButton);
+        root.getChildren().add(closeActionButton);
         
         scene = new Scene(root, 300, 250);
         
