@@ -5,7 +5,9 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
@@ -13,32 +15,47 @@ import javafx.stage.Stage;
  * @author Shaft
  */
 public class JavaFXLearning extends Application {
-    Button btn = new Button();
-    Button btn2 = new Button("abcd");
+    Button btn2;
+    
+    Stage window;
+    Scene scene, scene2;
     
     @Override
     public void start(Stage primaryStage) {
+        window = primaryStage;
         
-        btn.setText("Say 'Hello World'");
-        
+        //root
+        btn2 = new Button("Button 2");
         btn2.setOnAction(e -> {
-            System.out.println("wow" + e.getTarget().toString());
+            System.out.println("wow");
+            btn2.setText("changed");
             System.out.println("works");
         });
-        btn.setOnAction(e -> {
-            System.out.println("buttn 2");
-            System.out.println("works button 2");
+        Button goButton = new Button("Goto scene 2");
+        goButton.setOnAction(e->{
+            window.setScene(scene2);
         });
         
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
+        StackPane root = new StackPane();        
+        root.getChildren().add(goButton);
         root.getChildren().add(btn2);
         
-        Scene scene = new Scene(root, 300, 250);
+        scene = new Scene(root, 300, 250);
         
-        primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        
+        //Scene 2
+        Label label2 = new Label("Scene 2");
+        Button button2 = new Button("Goto back to root");
+        button2.setOnAction(e->{
+            window.setScene(scene);
+        });
+        VBox layout2 = new VBox(20);
+        layout2.getChildren().addAll(label2, button2);
+        scene2 = new Scene(layout2, 300, 300);
+        
+        window.setTitle("Hello World!");
+        window.setScene(scene);
+        window.show();
     }
 
     public static void main(String[] args) {
