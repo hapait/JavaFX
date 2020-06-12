@@ -35,10 +35,16 @@ public class JavaFXLearning extends Application {
         goButton.setOnAction(e->{
             window.setScene(scene2);
         });
+        Button openDialogBoxButton = new Button("Open Dialog");
+        openDialogBoxButton.setOnAction(e->{
+            AlertBox.display("Alert", "You need to close this modal");
+        });
         
-        StackPane root = new StackPane();        
+        //StackPane root = new StackPane();
+        VBox root = new VBox();
         root.getChildren().add(goButton);
         root.getChildren().add(btn2);
+        root.getChildren().add(openDialogBoxButton);
         
         scene = new Scene(root, 300, 250);
         
