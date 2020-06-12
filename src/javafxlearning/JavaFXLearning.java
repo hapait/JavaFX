@@ -51,6 +51,11 @@ public class JavaFXLearning extends Application {
             new ClosingAction().display("abcd", "abdcjdfs");
         });
         
+        Button gotoMultiLayout = new Button("Multi Layout window");
+        gotoMultiLayout.setOnAction(e->{
+            MultiLayoutWindow.display("abdfbs", "hsdfjshjfh");
+        });
+        
         //StackPane root = new StackPane();
         VBox root = new VBox();
         root.getChildren().add(goButton);
@@ -58,6 +63,7 @@ public class JavaFXLearning extends Application {
         root.getChildren().add(openDialogBoxButton);
         root.getChildren().add(openConfirmBoxButton);
         root.getChildren().add(closeActionButton);
+        root.getChildren().add(gotoMultiLayout);
         
         scene = new Scene(root, 300, 250);
         
@@ -71,6 +77,7 @@ public class JavaFXLearning extends Application {
         VBox layout2 = new VBox(20);
         layout2.getChildren().addAll(label2, button2);
         scene2 = new Scene(layout2, 300, 300);
+        
         
         window.setTitle("Hello World!");
         window.setScene(scene);
