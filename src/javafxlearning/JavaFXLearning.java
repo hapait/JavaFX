@@ -93,7 +93,7 @@ public class JavaFXLearning extends Application {
         
         Button gotoTableViewTest = new Button("gotoTableViewTest");
         gotoTableViewTest.setOnAction(e->{
-            TableViewTest.Display();
+            new TableViewTest().Display();
         });
         
         //StackPane root = new StackPane();
