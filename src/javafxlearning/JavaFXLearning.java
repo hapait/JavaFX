@@ -71,6 +71,11 @@ public class JavaFXLearning extends Application {
             CheckBoxTest.Display();
         });
         
+        Button gotoDropdownMenuTest = new Button("gotoDropdownMenuTest");
+        gotoDropdownMenuTest.setOnAction(e->{
+            DropdownMenuTest.Display();
+        });
+        
         //StackPane root = new StackPane();
         VBox root = new VBox();
         root.getChildren().add(goButton);
@@ -82,6 +87,7 @@ public class JavaFXLearning extends Application {
         root.getChildren().add(gotoGridLayoutPage);
         root.getChildren().add(gotoValidation);
         root.getChildren().add(gotoCheckBoxTest);
+        root.getChildren().add(gotoDropdownMenuTest);
         
         scene = new Scene(root, 300, 600);
         
