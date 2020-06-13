@@ -86,6 +86,11 @@ public class JavaFXLearning extends Application {
             ListViewTest.Display();
         });
         
+        Button gotoTreeViewTest = new Button("gotoTreeViewTest");
+        gotoTreeViewTest.setOnAction(e->{
+            TreeViewTest.Display();
+        });
+        
         //StackPane root = new StackPane();
         VBox root = new VBox();
         root.getChildren().add(goButton);
@@ -100,6 +105,7 @@ public class JavaFXLearning extends Application {
         root.getChildren().add(gotoDropdownMenuTest);
         root.getChildren().add(gotoComboboxTest);
         root.getChildren().add(gotoListViewTest);
+        root.getChildren().add(gotoTreeViewTest);
         scene = new Scene(root, 300, 600);
         
         
