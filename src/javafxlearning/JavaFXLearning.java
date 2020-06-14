@@ -106,6 +106,11 @@ public class JavaFXLearning extends Application {
             CSSTest.Display();
         });
         
+        Button gotoPropertyTest = new Button("Goto PropertyTest");
+        gotoPropertyTest.setOnAction(e->{
+            PropertyTest.Display();
+        });
+        
         //StackPane root = new StackPane();
         VBox root = new VBox();
         root.getChildren().add(goButton);
@@ -124,6 +129,7 @@ public class JavaFXLearning extends Application {
         root.getChildren().add(gotoTableViewTest);
         root.getChildren().add(gotoMenuTest);
         root.getChildren().add(gotoCSSTest);
+        root.getChildren().add(gotoPropertyTest);
         scene = new Scene(root, 300, 600);
         
         
