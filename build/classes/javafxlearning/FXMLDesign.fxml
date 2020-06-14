@@ -6,7 +6,21 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxlearning.Controller">
+<VBox id="vbox" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxlearning.Controller">
     <Button layoutX="126" layoutY="90" text="Click Me!" fx:id="button" onAction="#handleButtonAction"/>
-    <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-</AnchorPane>
+    <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" text="test label"/>
+    
+    <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="firstLabel" text="first Label"/>
+    <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="secondLabel" text="${firstLabel.text}"/>
+    
+    <fx:define>
+        <ToggleGroup fx:id="toggle">
+            
+        </ToggleGroup>
+    </fx:define>
+    
+    <Label text="Difficulty"></Label>
+    <RadioButton text="Easy" toggleGroup="$toggle"></RadioButton>
+    <RadioButton text="Medium" toggleGroup="$toggle"></RadioButton>
+    <RadioButton text="Hard" toggleGroup="$toggle"></RadioButton>
+</VBox>
