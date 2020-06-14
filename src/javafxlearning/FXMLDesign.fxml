@@ -7,6 +7,6 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxlearning.Controller">
-    <Button layoutX="126" layoutY="90" text="Click Me!" fx:id="button" />
+    <Button layoutX="126" layoutY="90" text="Click Me!" fx:id="button" onAction="#handleButtonAction"/>
     <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
 </AnchorPane>
